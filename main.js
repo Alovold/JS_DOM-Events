@@ -67,7 +67,18 @@ groceryDiv.appendChild(fruitList);
 // -> "Clicking the button triggers the onclick event, which calls the JS function show()... which alerts the user"
 // This div should be a 'modal' that covers the main content on the screen
 // BONUS: The modal popup should be able to be closed. Refactor for this functionality
+let button = document.getElementById("btn");
+let exer5 = document.querySelector(".exercise5")
+
 function show(){
     let showDiv = document.createElement("div");
+    let parentDiv = document.createElement("div");
     showDiv.textContent = "Clicking the button triggers the onclick event, which calls the JS function show()... which alerts the user"
+    parentDiv.id = "modal";
+    showDiv.classList.add("modal-card");
+
+    parentDiv.appendChild(showDiv);
+    exer5.appendChild(parentDiv);
 }
+button.addEventListener("click", show);
+
